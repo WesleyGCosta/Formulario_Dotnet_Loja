@@ -1,0 +1,74 @@
+﻿@model Web.Models.ClienteViewModel
+
+<form asp-for="Novo">
+    <div class="card">
+        <div class="card-header"><h1 class="text-center">Cadastrar Cliente</h1></div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-5">
+                    <label asp-for="Nome"></label>
+                    <input type="text" asp-for="Nome" class="form-control" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+                <div class="col-md-3">
+                    <label asp-for="Cpf"></label>
+                    <input type="text" asp-for="Cpf" class="form-control" />
+                    <span asp-validation-for="Cpf" class="text-danger"></span>
+                </div>
+                <div class="col-md-2">
+                    <label asp-for="Sexo"></label>
+                    <select asp-for="Sexo" class="form-control">
+                        <option>Selecione</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label asp-for="Telefone"></label>
+                    <input type="text" asp-for="Telefone" class="form-control" />
+                    <span asp-validation-for="Telefone" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <label asp-for="Endereco"></label>
+                    <input type="text" asp-for="Endereco" class="form-control" />
+                </div>
+                <div class="col-md-3">
+                    <label asp-for="Bairro"></label>
+                    <input asp-for="Bairro" class="form-control" />
+                </div>
+                <div class="col-md-2">
+                    <label asp-for="Numero"></label>
+                    <input type="number" asp-for="Numero" class="form-control" />
+                </div>
+                <div class="col-md-2">
+                    <label asp-for="Cep"></label>
+                    <input asp-for="Cep" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-md-4">
+                    <a class="btn btn-secondary" asp-controller="Cliente" asp-action="Index">Voltar</a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <input type="reset" value="Resetar" class="btn btn-secondary" />
+                </div>
+                <div class="col-md-4 text-right">
+                    <input type="submit" value="Gravar" class="btn btn-secondary"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<hr />
+
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
